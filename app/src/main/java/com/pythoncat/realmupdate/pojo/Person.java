@@ -16,4 +16,5 @@ public class Person  extends RealmObject{
     public String name;
     public int age;
     public boolean sex;
+    public boolean read;
 }

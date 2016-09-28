@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             p.age = new Random().nextInt(100);
             p.name = "name " + p.age;
             p.sex = new Random().nextBoolean();
+            p.read = new Random().nextBoolean();
             personArrayList.add(p);
         }
         return personArrayList;
