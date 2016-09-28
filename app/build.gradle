@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+apply plugin: 'me.tatarka.retrolambda'/*这个需要添加*/
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -17,7 +19,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }/*这个需要添加*/
 }
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}/*这个需要添加*/
+
+// Required because retrolambda is on maven central
+repositories {
+    mavenCentral()
+}/*这个需要添加*/
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
